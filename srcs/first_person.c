@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   first_person.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jcarlena <jcarlena@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jcarlena <jcarlena@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 04:24:54 by jcarlena          #+#    #+#             */
-/*   Updated: 2021/03/13 06:52:37 by jcarlena         ###   ########.fr       */
+/*   Updated: 2022/01/07 16:45:49 by jcarlena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,38 +56,6 @@ static void	set_v_line(t_wall *w, t_img *sight, int n)
 	}
 }
 
-static void	swap_sprites(t_spr **a, t_spr **b)
-{
-	t_spr	*tmp;
-
-	tmp = *a;
-	*a = *b;
-	*b = tmp;
-}
-
-void		sort_sprites(t_data *data, int size)
-{
-	int		i;
-	int		j;
-	int		max;
-
-	i = 0;
-	while (i < size)
-	{
-		max = i;
-		j = i + 1;
-		while (j < size)
-		{
-			if (data->sprs[j]->dist > data->sprs[max]->dist)
-				max = j;
-			(j++);
-		}
-		if (max != i)
-			swap_sprites(&data->sprs[i], &data->sprs[max]);
-		(i++);
-	}
-}
-
 void		show_frame(t_data *data)
 {
 	int		i;
@@ -98,9 +66,4 @@ void		show_frame(t_data *data)
 	while (i < data->sight.width)
 		set_v_line(w, &data->sight, i++);
 	free(data->walls);
-	i = 0;
-	sort_sprites(data, data->s_n);
-	while (i < data->s_n)
-		draw_sprite(data, data->sprs[i++]);
-	free_sprs(data);
 }

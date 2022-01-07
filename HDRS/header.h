@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   header.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jcarlena <jcarlena@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jcarlena <jcarlena@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 05:40:10 by jcarlena          #+#    #+#             */
-/*   Updated: 2021/03/16 17:16:02 by jcarlena         ###   ########.fr       */
+/*   Updated: 2022/01/07 16:47:33 by jcarlena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,6 @@ int			getcolor(t_img *img, int x, int y);
 void		set_player(t_data *data);
 char		set_position(t_data *data);
 float		delta(float a, float b);
-int			count_sprites(t_data *data);
 void		raycast_init(t_data *data, t_raycast *ray);
 /*
 ** UTILS 3
@@ -109,7 +108,6 @@ void		clear_splitted(char **table);
 
 int			char_n(char *s, char c);
 void		catch_textures(t_data *data, char *line);
-void		catch_sprite(t_data *data, char *line);
 void		catch_color(char *line, unsigned *color);
 void		catch_resolution(t_data *data, char *line);
 
@@ -127,11 +125,6 @@ int			color_transmutation(unsigned color, float x);
 void		build_walls(t_data *data, t_raycast *ray);
 void		show_frame(t_data *data);
 /*
-** SPRITES
-*/
-void		get_sprites(t_data *data);
-void		draw_sprite(t_data *data, t_spr *sprite);
-/*
 ** VALIDATE CONFIG
 */
 void		validate_file(t_data *data, char *map_name);
@@ -143,9 +136,5 @@ void		minus_save(t_data *data);
 ** VALIDATE_MAP
 */
 void		validate_map(t_data *data);
-/*
-** FREE_MEM
-*/
-void		free_sprs(t_data *data);
 
 #endif

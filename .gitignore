@@ -50,3 +50,8 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+#Added by RIZ0x1
+.vscode
+.DS_Store
+*/.DS_Store

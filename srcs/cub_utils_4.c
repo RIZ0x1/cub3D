@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub_utils_4.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jcarlena <jcarlena@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jcarlena <jcarlena@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 04:24:50 by jcarlena          #+#    #+#             */
-/*   Updated: 2021/03/14 09:06:05 by jcarlena         ###   ########.fr       */
+/*   Updated: 2022/01/07 16:55:59 by jcarlena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,20 +81,6 @@ void	catch_color(char *line, unsigned *color)
 		(count++);
 	}
 	clear_splitted(table);
-}
-
-void	catch_sprite(t_data *data, char *line)
-{
-	char **path;
-
-	if (line[1] != ' ' || data->set[5] == '1')
-		error_handler(ERR_GET_SPRITE);
-	path = ft_split(&line[1], ' ');
-	if ((path[1] != NULL))
-		error_handler(ERR_GET_SPRITE);
-	data->paths.spr = ft_strdup(*path);
-	clear_splitted(path);
-	data->set[5] = '1';
 }
 
 void	catch_textures(t_data *data, char *line)

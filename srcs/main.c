@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jcarlena <jcarlena@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jcarlena <jcarlena@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 04:25:13 by jcarlena          #+#    #+#             */
-/*   Updated: 2021/03/15 13:52:17 by jcarlena         ###   ########.fr       */
+/*   Updated: 2022/01/07 17:14:37 by jcarlena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static void		init_vars(t_data *data)
 	data->paths.ea = NULL;
 	data->paths.we = NULL;
 	i = 0;
-	while (i < 6)
+	while (i < N_SETTINGS)
 		data->set[i++] = '0';
 }
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub_utils_1.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jcarlena <jcarlena@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jcarlena <jcarlena@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 04:24:21 by jcarlena          #+#    #+#             */
-/*   Updated: 2021/03/14 09:15:07 by jcarlena         ###   ########.fr       */
+/*   Updated: 2022/01/07 16:44:57 by jcarlena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,11 @@ int			end_program(t_data *data, int key)
 	return (key);
 }
 
-static void	spr_collision(t_data *data, float x, float y)
+static void	collision(t_data *data, float x, float y)
 {
 	if (data->matrix[(int)(data->pl.y)][(int)(data->pl.x)] == '1' ||
 		data->matrix[(int)(data->pl.y)][(int)(data->pl.x)] == '2' ||
-		data->matrix[(int)(delta(data->pl.y, y) / 2)][(int)(delta(data->pl.x, x) / 2)] == '1' ||
-		data->matrix[(int)(delta(data->pl.y, y) / 2)][(int)(delta(data->pl.x, x) / 2)] == '2')
+		data->matrix[(int)(delta(data->pl.y, y) / 2)][(int)(delta(data->pl.x, x) / 2)] == '1')
 	{
 		data->pl.y = y;
 		data->pl.x = x;
@@ -55,7 +54,7 @@ void		move_player(t_data *data, int key)
 		data->pl.x += cos(data->pl.angle + 1.5708) * MOVE;
 		data->pl.y += sin(data->pl.angle + 1.5708) * MOVE;
 	}
-	spr_collision(data, x, y);
+	collision(data, x, y);
 }
 
 void		rotate_cam(t_data *data, int key)

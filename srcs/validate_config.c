@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   validate_config.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jcarlena <jcarlena@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jcarlena <jcarlena@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 04:25:29 by jcarlena          #+#    #+#             */
-/*   Updated: 2021/03/14 09:06:30 by jcarlena         ###   ########.fr       */
+/*   Updated: 2022/01/07 17:14:11 by jcarlena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,8 @@ static void		set_textures(t_data *data)
 										&data->so.width, &data->so.height);
 	data->we.img = mlx_png_file_to_image(data->mlx, data->paths.we,
 										&data->we.width, &data->we.height);
-	data->sprt.img = mlx_png_file_to_image(data->mlx, data->paths.spr,
-									&data->sprt.width, &data->sprt.height);
 	if (!data->no.img || !data->ea.img ||
-		!data->so.img || !data->we.img ||
-		!data->sprt.img)
+		!data->so.img || !data->we.img)
 		sys_error(ENOENT, strerror(ENOENT));
 	data->no.addr = mlx_get_data_addr(data->no.img, &data->no.bpp,
 										&data->no.ll, &data->no.end);
@@ -36,8 +33,6 @@ static void		set_textures(t_data *data)
 										&data->so.ll, &data->so.end);
 	data->we.addr = mlx_get_data_addr(data->we.img, &data->we.bpp,
 										&data->we.ll, &data->we.end);
-	data->sprt.addr = mlx_get_data_addr(data->sprt.img, &data->sprt.bpp,
-										&data->sprt.ll, &data->sprt.end);
 }
 
 static int		texture_case(char *line)
@@ -55,7 +50,7 @@ static int		check_settings(char *set)
 
 	i = 0;
 	ret = 1;
-	while (i < 6 && ret != -1)
+	while (i < N_SETTINGS && ret != -1)
 	{
 		if (set[i] == '0')
 			ret = 0;
@@ -70,8 +65,6 @@ static int		main_cases(t_data *data, char *line)
 		catch_resolution(data, &line[1]);
 	else if (texture_case(line))
 		catch_textures(data, line);
-	else if (line[0] == 'S')
-		catch_sprite(data, line);
 	else if (line[0] == 'F' && line[1] == ' ' && !g_floor)
 		catch_color(&line[1], &g_floor);
 	else if (line[0] == 'C' && line[1] == ' ' && !g_ceiling)
@@ -103,7 +96,6 @@ void			validate_file(t_data *data, char *map_name)
 	}
 	create_map(data, fd, line);
 	validate_map(data);
-	data->s_n = count_sprites(data);
 	set_textures(data);
 	close(fd);
 }

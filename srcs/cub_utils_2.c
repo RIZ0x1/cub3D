@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub_utils_2.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jcarlena <jcarlena@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jcarlena <jcarlena@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 04:24:33 by jcarlena          #+#    #+#             */
-/*   Updated: 2021/03/14 10:54:12 by jcarlena         ###   ########.fr       */
+/*   Updated: 2022/01/07 16:45:13 by jcarlena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,29 +55,6 @@ void		set_player(t_data *data)
 		data->pl.angle = 1.5708;
 	data->pl.dirx = cos(data->pl.angle) * MOVE;
 	data->pl.diry = sin(data->pl.angle) * MOVE;
-}
-
-int			count_sprites(t_data *data)
-{
-	int		y;
-	int		x;
-	int		n;
-
-	n = 0;
-	x = 0;
-	y = 1;
-	while (y < (data->map.height - 1))
-	{
-		x = 0;
-		while (x < data->map.width)
-		{
-			if (data->matrix[y][x] == '2')
-				(n++);
-			(x++);
-		}
-		(y++);
-	}
-	return (n);
 }
 
 void		raycast_init(t_data *data, t_raycast *ray)

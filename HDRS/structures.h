@@ -3,15 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   structures.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jcarlena <jcarlena@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jcarlena <jcarlena@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 05:40:30 by jcarlena          #+#    #+#             */
-/*   Updated: 2021/03/13 08:14:54 by jcarlena         ###   ########.fr       */
+/*   Updated: 2022/01/07 17:15:57 by jcarlena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef STRUCTURES_H
 # define STRUCTURES_H
+
+#include "defines.h"
 
 typedef struct		s_conf
 {
@@ -58,7 +60,6 @@ typedef struct		s_paths
 	char			*ea;
 	char			*so;
 	char			*we;
-	char			*spr;
 }					t_paths;
 
 typedef struct		s_line
@@ -96,19 +97,6 @@ typedef struct		s_wall
 	t_img	*txtr;
 }					t_wall;
 
-typedef struct		s_spr
-{
-	float	x;
-	float	y;
-	float	dir;
-	float	dist;
-	int		offh;
-	int		offv;
-	int		screen;
-	float	scale;
-
-}					t_spr;
-
 typedef struct		s_map
 {
 	int				height;
@@ -121,17 +109,15 @@ typedef struct		s_data
 	void			*win;
 	char			**matrix;
 	t_map			map;
-	char			set[6];
+	char			set[N_SETTINGS];
 	int				s_n;
 	t_wall			*walls;
-	t_spr			**sprs;
 	t_player		pl;
 	t_img			sight;
 	t_img			no;
 	t_img			ea;
 	t_img			so;
 	t_img			we;
-	t_img			sprt;
 	t_paths			paths;
 }					t_data;
 

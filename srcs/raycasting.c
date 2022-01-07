@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   raycasting.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jcarlena <jcarlena@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jcarlena <jcarlena@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 04:25:23 by jcarlena          #+#    #+#             */
-/*   Updated: 2021/03/16 17:00:40 by jcarlena         ###   ########.fr       */
+/*   Updated: 2022/01/07 16:35:47 by jcarlena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,6 @@ void			raycasting(t_data *data)
 
 	raycast_init(data, &ray);
 	data->walls = malloc(sizeof(t_wall) * data->sight.width);
-	get_sprites(data);
 	while (ray.n < data->sight.width)
 	{
 		ray.x = ray.xm + 1 - (cos(ray.angle) <= 0.0);

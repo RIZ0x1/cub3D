@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   validate_map.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jcarlena <jcarlena@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jcarlena <jcarlena@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 04:25:31 by jcarlena          #+#    #+#             */
-/*   Updated: 2021/03/13 05:01:14 by jcarlena         ###   ########.fr       */
+/*   Updated: 2022/01/07 16:38:18 by jcarlena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ static int	check_for_junk(char **mx, int h, int w)
 		while (x < w)
 		{
 			c = mx[y][x];
-			if (c != '0' && c != '1' && c != '2' && c != 'N' && c != 'S' &&
+			if (c != '0' && c != '1' && c != 'N' && c != 'S' &&
 			c != 'E' && c != 'W' && c != ' ' && c != '\0')
 				return (0);
 			else if (c == 'N' || c == 'S' || c == 'W' || c == 'E')

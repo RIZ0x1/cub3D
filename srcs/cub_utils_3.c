@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub_utils_3.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jcarlena <jcarlena@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jcarlena <jcarlena@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 04:24:43 by jcarlena          #+#    #+#             */
-/*   Updated: 2021/03/13 04:25:43 by jcarlena         ###   ########.fr       */
+/*   Updated: 2022/01/07 16:45:27 by jcarlena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,10 +50,6 @@ void		error_handler(const short number)
 		ft_putstr_fd("Wrong path to wall texture (get)\n", 2);
 	else if (number == ERR_SET_TXTURE)
 		ft_putstr_fd("Wrong path to wall texture (set)\n", 2);
-	else if (number == ERR_GET_SPRITE)
-		ft_putstr_fd("Wrong sprite texture setting (get)\n", 2);
-	else if (number == ERR_SET_SPRITE)
-		ft_putstr_fd("Wrong sprite texture setting (set)\n", 2);
 	else if (number == ERR_WRNG_SET_NBR)
 		ft_putstr_fd("Invalid configuration file\n", 2);
 	else if (number == ERR_COMMENT)
