@@ -1,4 +1,4 @@
-R 1600 1650
+R 1200 800
 WE ./TXT/silent_hill_we.png
 EA ./TXT/silent_hill_ea.png
 SO ./TXT/silent_hill_so.png
